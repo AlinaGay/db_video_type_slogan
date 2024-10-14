@@ -2,7 +2,8 @@ import sqlite3
 con = sqlite3.connect('db_video_type_slogan.sqlite')
 cur = con.cursor()
 results = cur.execute('''
-    SELECT *
+    SELECT video_products.title,
+           slogans.slogan_text
     FROM video_products,
          slogans
     WHERE video_products.slogan_id = slogans.id;
